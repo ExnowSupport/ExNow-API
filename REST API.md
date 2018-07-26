@@ -11,7 +11,7 @@ REST，即Representational State Transfer的缩写，是目前最流行的一种
     
 ## 请求交互    
 
-REST访问的根URL：`https://api.exnow.com/v1` 
+REST访问的根URL：`https://api.exnow.com/private/v1` 
 
 所有请求基于Https协议，请求头信息中contentType需要统一设置为：`application/x-www-form-urlencoded`   
 	
@@ -29,13 +29,13 @@ REST访问的根URL：`https://api.exnow.com/v1`
 
 ####1. POST /v1/balance  获取exnow账户资产信息
 
-URL `https://api.exnow.com/v1/balance` 
+URL `https://api.exnow.com/private/v1/balance` 
 
 示例	
 
 ```
 # Request
-POST https://api.exnow.com/v1/balance
+POST https://api.exnow.com/private/v1/balance
 # Response
  "data": [
         {
@@ -84,13 +84,13 @@ total_fund：资金总额
 
 ####2. POST /v1/limitOrder   下单
 
-URL `https://api.exnow.com/v1/limitOrder`
+URL `https://api.exnow.com/private/v1/limitOrder`
 
 示例	
 
 ```
 # Request
-POST https://api.exnow.com/v1/limitOrder
+POST https://api.exnow.com/private/v1/limitOrder
 # Response
 {
     "data": true,
@@ -130,13 +130,13 @@ success:成功
 
 ####3. PUT /v1/cancelOrder
 
-URL `https://api.exnow.com/v1/cancelOrder`   	
+URL `https://api.exnow.com/private/v1/cancelOrder`   	
 
 示例	
 
 ```
 # Request
-POST https://api.exnow.com/v1/cancelOrder
+POST https://api.exnow.com/private/v1/cancelOrder
 # Response
 {
     "code": 200,
@@ -170,15 +170,15 @@ result ： true代表成功返回
 |market|String|是|交易对|
 |user_order_id|String|是| 订单id|
 
-####4. POST /v1/entrusts    获取用户当前委单
+####4. POST /v1/entrusts    获取用户当前委单（历史委单）
 
-URL `https://api.exnow.com/v1/entrusts`  
+URL `https://api.exnow.com/private/v1/entrusts`  
 
 示例	
 
 ```
 # Request
-POST https://api.exnow.com/v1/entrusts
+POST https://api.exnow.com/private/v1/entrusts
 # Response
 {
     "data": [
@@ -230,8 +230,8 @@ t：1：限价 2：市价
 {
 	"key":"33fc0af0a2135eb304d06465309ac0f4",
 	"time":"111",
-	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"
-}
+	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"，
+	"state":"1"}
 ```
 
 |参数名|	参数类型|	必填|	描述|
@@ -239,11 +239,12 @@ t：1：限价 2：市价
 |key|String|是|用户申请的apiKey|
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
+|state|String|是|1：当前委单 2：历史委单|
 
 
 ####5. POST /v1/deals
 
-URL `https://api.exnow.com/v1/deals`  获取成交订单
+URL `https://api.exnow.com/private/v1/deals`  获取成交订单
 
 示例	
 
