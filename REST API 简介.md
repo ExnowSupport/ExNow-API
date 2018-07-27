@@ -1,8 +1,8 @@
-##REST API 简介
+## REST API 简介
 exnow为用户提供了一套API，可以帮用户快速接入exnow的交易系统，实现程序化交易。
 
 |访问地址	|适用功能	|
-| ------ | ------ | ------ |
+| ------ | ------ |
 | https://api.exnow.com/private/v1/balance | 获取账户资产信息 |
 | https://api.exnow.com/private/v1/limitOrder | 下单 |
 | https://api.exnow.com/private/v1/cancelOrder | 撤单 |
