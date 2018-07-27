@@ -158,7 +158,7 @@ result ： true代表成功返回
 	"time":"111",
 	"signature":"f5adcf4f8d3376b858532af62f2c0a8b",
 	"market":"eth_btc",
-	"user_order_id":"1531732308654004"
+	"userOrderId":"1531732308654004"
 }
 ```
 
@@ -168,7 +168,7 @@ result ： true代表成功返回
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
 |market|String|是|交易对|
-|user_order_id|String|是| 订单id|
+|userOrderId|String|是| 订单id|
 
 ####4. POST /v1/entrusts    获取用户当前委单（历史委单）
 
