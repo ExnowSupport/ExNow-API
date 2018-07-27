@@ -1,4 +1,4 @@
-#### 目前关于apikey申请和修改，请在“ExNow最下面的导航栏 - API申请”页面进行相关操作。
+#### 目前关于apikey申请和修改，请在“ExNow最下面的导航栏 - API文档”页面进行相关操作。
 #### 支持所有ExNow交易所的交易对
 ## REST行情、交易API
 #### [API 简介](https://github.com/ExnowSupport/ExNow-API/blob/master/REST%20API%20%E7%AE%80%E4%BB%8B.md)
