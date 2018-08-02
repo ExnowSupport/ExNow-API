@@ -13,7 +13,7 @@ REST，即Representational State Transfer的缩写，是目前最流行的一种
 
 REST访问的根URL：`https://api.exnow.com/private/v1` 
 
-所有请求基于Https协议，请求头信息中contentType需要统一设置为：`application/x-www-form-urlencoded`   
+所有请求基于Https协议，请求头信息中contentType需要统一设置为：`application/json`   
 	
 请求交互说明    
 1. 请求参数：根据接口请求参数规定进行参数封装。    
