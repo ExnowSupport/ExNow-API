@@ -11,7 +11,7 @@ REST，即Representational State Transfer的缩写，是目前最流行的一种
     
 ## 请求交互    
 
-REST访问的根URL：`https://api.exnow.com/private/v1` 
+REST访问的根URL：`https://api.exnow.com/` 
 
 所有请求基于Https协议，请求头信息中contentType需要统一设置为：`application/json`   
 	
@@ -23,7 +23,221 @@ REST访问的根URL：`https://api.exnow.com/private/v1`
 
 ## API参考  
 
-### 合约交易 API 
+### 行情 API 
+
+获取Exnow行情数据  
+
+#### GET  public/v1/markets    获取Exnow交易对列表
+
+URL `https://api.exnow.com/public/v1/markets`	
+
+示例	
+
+```
+# Request
+GET https://api.exnow.com/public/v1/markets
+# Response
+{
+    "success": true,
+    "data": [
+        "xrp_btc",
+        "mdt_eth",
+        "eth_btc",
+        "sky_btc",
+        "xrp_cnc",
+        "dash_btc",
+        "btc_cnc",
+        "sc_btc",
+        "dash_cnc",
+        "eth_cnc",
+        "fgc_eth"
+    ]
+}
+```
+
+返回值说明	
+
+```
+data:交易对
+```
+
+
+#### GET public/v1/ticker   获取Exnow单一市场实时行情
+
+URL `https://api.exnow.com/public/v1/ticker`	
+
+示例	
+
+```
+# Request
+GET https://api.exnow.com/public/v1/ticker?market=eth_btc
+# Response
+{
+    "success": true,
+    "data": {
+        "volume": "24.3134",
+        "high": "0.000061",
+        "deal": "1.8160819157",
+        "last": "0.000061",
+        "low": "0.000061",
+        "open": "0.000061"
+    }
+}
+```
+
+返回值说明	
+
+```
+volume :成交量
+high :高
+deal：成交额
+last：收
+low:低
+open:开
+```
+
+请求参数	
+
+|参数名|	参数类型|	必填|	描述|
+| :-----    | :-----   | :-----    | :-----   |
+|market|String|是|eth_btc|
+
+#### Get /public/v1/depth  获取Exnow单市场深度
+
+URL `https://api.exnow.com/public/v1/depth`	
+
+示例	
+
+```
+# Request
+GET https://api.exnow.com/public/v1/depth?market=eth_btc
+# Response
+{
+    "success": true,
+    "data": {
+        "stock_amount": "1998.0000",
+        "money_amount": "0e-10",
+        "asks": [
+            [
+                "0.000061",
+                "1998",
+                "0.121878"
+            ]
+        ],
+        "bids": []
+    }
+}
+```
+
+返回值说明	
+
+```
+stock_amount：卖出总量
+money_amount：买入总额
+asks：卖单
+bids：买单
+```
+
+请求参数	
+
+|参数名|	参数类型|	必填|	描述|
+| :-----    | :-----   | :-----    | :-----   |
+|market|String|是|eth_btc|
+
+
+#### Get /public/v1/trades   获取Exnow历史成交
+
+URL `https://api.exnow.com/public/v1/trades`	
+
+示例	
+
+```
+# Request
+GET https://api.exnow.com/public/v1/trades?market=eth_btc&limit=2
+# Response
+{
+    "success": true,
+    "data": [
+        {
+            "amount": "2",
+            "price": "0.000061",
+            "id": 68779,
+            "time": 1533613048.9352081,
+            "type": "buy"
+        },
+        {
+            "amount": "10",
+            "price": "0.000061",
+            "id": 68778,
+            "time": 1533613048.93503,
+            "type": "buy"
+        } 
+           ]
+  }
+```
+
+返回值说明	
+
+```
+amount：数量
+price：价格
+"time"：时间
+"type":买卖方向
+```
+
+请求参数	
+
+|参数名|	参数类型|	必填|	描述|
+| :-----    | :-----   | :-----    | :-----   |
+|market|String|是|eth_btc|
+|limit|int|否|获取条数（1-100之间）|
+
+#### Get /public/v1/kline   获取Exnow K线蜡烛图
+
+URL `https://api.exnow.com/public/v1/kline`	
+
+示例	
+
+```
+# Request
+GET https://api.exnow.com/public/v1/kline?market=eth_btc&period=86400&since=0&size=100
+# Response
+{
+    "success": true,
+    "data": [
+        [
+            1529942400,  //时间戳
+            "0.072401",  //open
+            "0.072427",  //high
+            "0.07185",  //low
+            "0.071967",  //close
+            "30.5411",  //volume
+            "2.2047955076"  //deal
+        ],
+        [
+            1530028800,
+            "0.072309",
+            "0.072392",
+            "0.070601",
+            "0.07153",
+            "145.0783",
+            "10.3330219245"
+        ],
+          ]
+    }
+```
+
+请求参数	
+```
+market:交易对
+period：区间
+since:开始位置
+size:条数
+```
+
+
+
+### 交易 API 
 
 用于exnow快速进行交易、查询资产
 
