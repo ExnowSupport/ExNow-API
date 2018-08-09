@@ -8,4 +8,4 @@
 
 
 ***
-#### Go to view the [English document](https://github.com/ExnowSupport/)
+#### Go to view the [English document](https://github.com/ExnowSupport/ExNow-API/blob/master/README_EN.md)
