@@ -3,6 +3,11 @@ Exnow provides an API for users to quickly access to exnow's trading system and 
 
 |Address     |Applicable functions    |
 | ------ | ------ |
+| https://api.exnow.com/public/v1/markets | 获取交易对列表 |
+| https://api.exnow.com/public/v1/ticker  | 获取单一市场实时行情 |
+| https://api.exnow.com/public/v1/depth | 获取单市场深度  |
+| https://api.exnow.com//public/v1/trades  | 获取历史成交 |
+| https://api.exnow.com/public/v1/kline  | 获取K线蜡烛图 |
 | https://api.exnow.com/private/v1/balance | Obtain account asset information |
 | https://api.exnow.com/private/v1/limitOrder | Place order |
 | https://api.exnow.com/private/v1/cancelOrder | Cancel order |
