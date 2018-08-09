@@ -192,7 +192,7 @@ Request parameters
 |Parameter names|    The parameter types|    Must fill in|    Description|
 | :-----    | :-----   | :-----    | :-----   |
 |market|String|YES|eth_btc|
-|limit|int|否|获取条数（1-100之间）|
+|limit|int|NO|Get the number of bars (between 1-100)|
 
 #### Get /public/v1/kline   Obtain ExNow K line candle stick chart
 
