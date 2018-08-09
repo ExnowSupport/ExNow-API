@@ -7,4 +7,4 @@
 #### [API error code](https://github.com/ExnowSupport/)
 
 ***
-#### 前往查看[中文文档](https://github.com/ExnowSupport/)
+#### 前往查看[中文文档](https://github.com/ExnowSupport/ExNow-API/blob/master/README.md)
