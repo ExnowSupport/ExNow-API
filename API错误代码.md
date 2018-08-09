@@ -26,4 +26,6 @@ REST API错误代码
 |AI02	|	API key不存在|
 |AI03	|	IP不正确|
 |AI05	|	用户key验证失败|
+|AI06	|	时间戳验证失败|
+|AI07	|	period不合法|
 
