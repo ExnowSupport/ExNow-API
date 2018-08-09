@@ -26,4 +26,5 @@ Transaction API error code
 |AI02	|	API key does not exist|
 |AI03	|	IP is not correct|
 |AI05	|	User key authentication failed|
-
+|AI06	|	Timestamp validation failed|
+|AI07	|	Period illegal|
