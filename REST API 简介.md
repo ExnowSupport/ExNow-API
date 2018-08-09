@@ -2,7 +2,12 @@
 exnow为用户提供了一套API，可以帮用户快速接入exnow的交易系统，实现程序化交易。
 
 |访问地址	|适用功能	|
-| ------ | ------ |
+| ------ | ------ | ------ |
+| https://api.exnow.com/public/v1/markets | 获取交易对列表 |
+| https://api.exnow.com/public/v1/ticker  | 获取单一市场实时行情 |
+| https://api.exnow.com/public/v1/depth | 获取单市场深度  |
+| https://api.exnow.com//public/v1/trades  | 获取历史成交 |
+| https://api.exnow.com/public/v1/kline  | 获取K线蜡烛图 |
 | https://api.exnow.com/private/v1/balance | 获取账户资产信息 |
 | https://api.exnow.com/private/v1/limitOrder | 下单 |
 | https://api.exnow.com/private/v1/cancelOrder | 撤单 |
