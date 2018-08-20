@@ -454,6 +454,7 @@ t：1：限价 2：市价
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
 |state|String|是|1：当前委单 2：历史委单|
+|page|int|否|第几页（不填则为第一页）|
 
 
 ####5. POST /v1/deals
@@ -518,4 +519,5 @@ amount：数量
 |key|String|是|用户申请的apiKey|
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
+|page|int|否|第几页（不填则为第一页）|
 
