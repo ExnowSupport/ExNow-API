@@ -13,6 +13,8 @@ exnow为用户提供了一套API，可以帮用户快速接入exnow的交易系�
 | https://api.exnow.com/private/v1/cancelOrder | 撤单 |
 | https://api.exnow.com/private/v1/entrusts | 获取当前委单和历史委单信息 |
 | https://api.exnow.com/private/v1/deals | 获取成交记录信息 |
+| https://api.exnow.com/private/v1/orderDetails | 通过订单id获取订单详细信息 |
+| https://api.exnow.com/private/v1/orderDeals | 通过订单id获取成交信息 |
 
 
 
