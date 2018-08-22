@@ -372,7 +372,7 @@ result ： true代表成功返回
 	"time":"111",
 	"signature":"f5adcf4f8d3376b858532af62f2c0a8b",
 	"market":"eth_btc",
-	"userOrderId":"1531732308654004"
+	"user_order_id":"1531732308654004"
 }
 ```
 
@@ -382,7 +382,7 @@ result ： true代表成功返回
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
 |market|String|是|交易对|
-|userOrderId|String|是| 订单id|
+|user_order_id|String|是| 订单id|
 
 ####4. POST /v1/entrusts    获取用户当前委单（历史委单）
 
@@ -520,4 +520,132 @@ amount：数量
 |signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
 |time|String|是|时间戳|
 |page|int|否|第几页（不填则为第一页）|
+
+
+####6. POST /v1/orderDetails
+
+URL `https://api.exnow.com/private/v1/orderDetails`  通过订单id获取订单详情
+
+示例	
+
+```
+# Request
+POST https://api.exnow.com/v1/orderDetails
+# Response
+{
+    "success": true,
+    "data": {
+        "id": 92,
+        "create_time": 1531733645000,
+        "update_time": 1531733645000,
+        "market": "btc_usdt",
+        "user_order_id": "1526522097165604",
+        "state": 4,
+        "userId": 10004,
+        "t": 1,
+        "side": 2,
+        "price": "2",
+        "amount": "2",
+        "deal_stock": "2",
+        "deal_money": "4",
+        "deal_fee": "0.6"
+    }
+}
+```
+
+返回值说明	
+
+```
+create_time:订单创建时间
+update_time: 订单更新时间,
+market: 交易对,
+user_order_id: 订单id,
+state: 状态,
+userId: 用户id,
+t: 1限价,
+side: 买卖方向 2卖,
+price: 价格,
+amount: 数量,
+deal_stock: 成交数量,
+deal_money: 成交总额,
+deal_fee: 成交费用
+```
+
+请求参数	
+```
+{
+	"key":"33fc0af0a2135eb304d06465309ac0f4",
+	"time":"111",
+	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"，
+	"user_order_id":"1526522097165604"
+}
+```
+
+|参数名|	参数类型|	必填|	描述|
+| :-----    | :-----   | :-----    | :-----   |
+|key|String|是|用户申请的apiKey|
+|signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
+|time|String|是|时间戳|
+|user_order_id|String|是|订单id|
+
+
+####7. POST /v1/orderDeals
+
+URL `https://api.exnow.com/private/v1/orderDeals`  通过订单id获取成交信息
+
+示例	
+
+```
+# Request
+POST https://api.exnow.com/v1/orderDeals
+# Response
+{
+    "success": true,
+    "data": [
+        {
+            "time": 1531733645000,
+            "userId": 10004,
+            "dealId": 29,
+            "market": "scec_eth",
+            "orderId": 38,
+            "side": 1,
+            "price": "0.0001",
+            "amount": "1000",
+            "deal": "0.1",
+            "fee": "0.0001"
+        }
+           ]
+ }
+```
+
+返回值说明	
+
+```
+time:成交时间
+userId: 用户id,
+market: 交易对
+side: 买卖方向 2卖,
+price: 价格,
+amount: 数量,
+deal: 总额,
+fee: 手续费
+```
+
+请求参数	
+```
+{
+	"key":"33fc0af0a2135eb304d06465309ac0f4",
+	"time":"111",
+	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"，
+	"user_order_id":"1526522097165604"
+}
+```
+
+|参数名|	参数类型|	必填|	描述|
+| :-----    | :-----   | :-----    | :-----   |
+|key|String|是|用户申请的apiKey|
+|signature|String|是|请求参数的签名 使用md5(key_用戶ID_skey_time)顺序不可改变|
+|time|String|是|时间戳|
+|user_order_id|String|是|订单id|
+
 
