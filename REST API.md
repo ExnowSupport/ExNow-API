@@ -574,9 +574,9 @@ deal_fee: 成交费用
 请求参数	
 ```
 {
-	"key":"33fc0af0a2135eb304d06465309ac0f4",
-	"time":"111",
-	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"，
+	"key":"33fc0af****5eb304d06465309ac0f4",
+	"time":"11****1",
+	"signature":"f5adc***b858532af62f2c0a8b"，
 	"user_order_id":"1526522097165604"
 }
 ```
@@ -634,9 +634,9 @@ fee: 手续费
 请求参数	
 ```
 {
-	"key":"33fc0af0a2135eb304d06465309ac0f4",
-	"time":"111",
-	"signature":"f5adcf4f8d3376b858532af62f2c0a8b"，
+	"key":"33fc0af***eb304d06465309ac0f4",
+	"time":"11*****1",
+	"signature":"f5adcf4f****858532af62f2c0a8b"，
 	"user_order_id":"1526522097165604"
 }
 ```
